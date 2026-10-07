@@ -8,7 +8,7 @@ const VIEWBOX_TALL = '560 0 1040 900' // crops to the woman + circles on portrai
 const lineBase = 'block whitespace-nowrap opacity-0 animate-in-left'
 
 export default function Hero() {
-  const heroRef = useRef(null)
+  const heroRef = useRef<HTMLElement>(null)
   const [viewBox, setViewBox] = useState(VIEWBOX_WIDE)
 
   // Swap the SVG viewBox on portrait / near-square screens
@@ -23,12 +23,13 @@ export default function Hero() {
   // Subtle mouse parallax (only on devices with a real pointer)
   useEffect(() => {
     if (!window.matchMedia('(hover: hover)').matches) return
-    const groups = heroRef.current.querySelectorAll('[data-p]')
-    const onMove = (e) => {
+    const groups = heroRef.current?.querySelectorAll<SVGGElement>('[data-p]')
+    if (!groups) return
+    const onMove = (e: MouseEvent) => {
       const x = e.clientX / window.innerWidth - 0.5
       const y = e.clientY / window.innerHeight - 0.5
       groups.forEach((g) => {
-        const p = Number(g.dataset.p)
+        const p = Number(g.dataset.p ?? 0)
         g.style.translate = `${x * p}px ${y * p}px`
       })
     }

@@ -1,15 +1,15 @@
 # Hurray Wellness – Animated Hero
 
-Full-screen "coming soon" hero built with **Vite + React + Tailwind CSS v4**.
+Full-screen "coming soon" hero built with **Vite + React + TypeScript + Tailwind CSS v4 (pnpm)**.
 No animation libraries: everything is CSS keyframes.
 
 ## Run
 
 ```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # production build in /dist
-npm run preview  # preview the build
+pnpm install
+pnpm dev      # http://localhost:5173
+pnpm build    # production build in /dist
+pnpm preview  # preview the build
 ```
 
 ## What animates
@@ -22,12 +22,12 @@ npm run preview  # preview the build
 ## Customize
 
 - **Swap the woman**: replace `src/assets/woman.png` (transparent PNG). If her framing changes,
-  adjust `x`, `y`, `width`, `height` on the `<image>` in `src/components/Hero.jsx`
+  adjust `x`, `y`, `width`, `height` on the `<image>` in `src/components/Hero.tsx`
   (the SVG uses a 1600x900 coordinate space).
 - **Colors / animations / font**: edit the `@theme` block in `src/index.css`.
-- **Circle positions**: edit `cx`, `cy`, `r` on the shapes in `Hero.jsx`.
+- **Circle positions**: edit `cx`, `cy`, `r` on the shapes in `Hero.tsx`.
 - **Portrait breakpoint**: `@custom-variant tall` in `src/index.css`
-  (and `TALL_QUERY` in `Hero.jsx`; keep them in sync).
+  (and `TALL_QUERY` in `Hero.tsx`; keep them in sync).
 
 ## Responsiveness
 
