@@ -1,4 +1,4 @@
-import Hero from './components/Hero.jsx'
+import Hero from './components/Hero'
 
 export default function App() {
   return <Hero />
