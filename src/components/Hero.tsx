@@ -47,7 +47,7 @@ export default function Hero() {
     >
       {/* ---------- Sunlight (anchored to the screen's top-left) ---------- */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-[15vmax] -top-[15vmax] size-[60vmax] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.9),rgba(255,255,255,0)_68%)] animate-glow" />
+        <div className="absolute left-[-15vmax] top-[-15vmax] size-[60vmax] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.9),rgba(255,255,255,0)_68%)] animate-glow" />
         {[
           { left: '6%', width: '14%', delay: '0s' },
           { left: '24%', width: '9%', delay: '-3.5s' },
@@ -55,7 +55,7 @@ export default function Hero() {
         ].map((r, i) => (
           <div
             key={i}
-            className="absolute -top-[10%] h-[120%] skew-x-[15deg] blur-[14px] opacity-0 animate-ray bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.8),rgba(255,255,255,0))]"
+            className="absolute top-[-10%] h-[120%] skew-x-15 blur-[14px] opacity-0 animate-ray bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.8),rgba(255,255,255,0))]"
             style={{ left: r.left, width: r.width, animationDelay: r.delay }}
           />
         ))}
@@ -77,9 +77,11 @@ export default function Hero() {
           </defs>
 
           <g data-p="-22" className={px}>
-            <path
-              className={`${shape} origin-top-right animate-coral`}
-              d="M1410 -3000L1410 -40C1398 120 1432 225 1505 292C1545 330 1580 380 1700 430L1700 -3000Z"
+            <circle
+              className={`${shape} overflow-auto origin-center animate-coral`}
+              cx="1555"
+              cy="400"
+              r="400"
               fill="#FF6B4A"
             />
           </g>
@@ -103,13 +105,13 @@ export default function Hero() {
       {/* ---------- Copy ---------- */}
       <div className="absolute left-[6.7%] top-[14%] z-10 max-w-[46%] short:top-[8%] tall:relative tall:left-auto tall:top-auto tall:order-first tall:max-w-none tall:flex-none tall:px-[7vw] tall:pt-[max(4svh,28px)]">
         <div
-          className="block opacity-0 animate-in-left font-semibold leading-[.92] tracking-[-.025em] text-[length:min(3.5vw,6.2vh)] tall:text-[length:min(6.4vw,3.4svh)]"
+          className="block opacity-0 animate-in-left font-semibold leading-[.92] mb-10 tracking-[-.025em] text-[length:min(3.5vw,6.2vh)] tall:text-[length:min(6.4vw,3.4svh)]"
           style={{ animationDelay: '.1s' }}
         >
           Hurray<br />Wellness
-        </div>
+        </div><br />
 
-        <h1 className="mt-[min(5vw,9vh)] mb-[min(4.2vw,7.5vh)] font-bold leading-none tracking-[-.04em] text-[length:min(6.6vw,11.7vh)] tall:mt-[min(5vw,2.6svh)] tall:mb-[min(4.5vw,2.4svh)] tall:text-[length:min(14vw,7.4svh)]">
+        <h1 className="mt-[min(5vw,10vh)] mb-[min(4.2vw,7.5vh)] font-bold leading-none tracking-[-.04em] text-[min(6.6vw,11.7vh)] tall:mt-[min(5vw,3svh)] tall:mb-[min(4.5vw,2.4svh)] tall:text-[min(14vw,7.4svh)]">
           <span className={lineBase} style={{ animationDelay: '.3s' }}>A New</span>
           <span className="block whitespace-nowrap opacity-0 animate-wellness text-transparent bg-clip-text bg-[linear-gradient(100deg,#FF6B4A_35%,#FFA06A_50%,#FF6B4A_65%)] bg-[length:250%_100%]">
             Wellness
